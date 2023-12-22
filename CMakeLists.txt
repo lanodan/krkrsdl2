@@ -372,7 +372,7 @@ set(SDL_SHARED_ENABLED_BY_DEFAULT OFF)
 set(SDL_SHARED OFF)
 set(HAVE_GCC_WDECLARATION_AFTER_STATEMENT OFF CACHE BOOL "Intentionally disabled for SDL on iOS: can declaration-after-statement warning be used" FORCE)
 set(HAVE_GCC_WERROR_DECLARATION_AFTER_STATEMENT OFF CACHE BOOL "Intentionally disabled for SDL on iOS: can declaration-after-statement error warning be used" FORCE)
-add_subdirectory(external/SDL)
+#add_subdirectory(external/SDL)
 find_library(SDL2 NAMES SDL2-static SDL2main)
 list(APPEND KRKRSDL2_LIBS
 	SDL2-static
@@ -385,7 +385,7 @@ get_target_property(SDL2_INCLUDE_DIRS SDL2-static INCLUDE_DIRECTORIES)
 set(SDL2_LIBRARIES SDL2-static)
 elseif((APPLE AND NOT IOS) OR (${CMAKE_SYSTEM_NAME} STREQUAL "Linux"))
 set(SDL_SHARED_ENABLED_BY_DEFAULT OFF)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SDL)
+#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SDL)
 find_library(SDL2 NAMES SDL2-static)
 list(APPEND KRKRSDL2_LIBS
 	SDL2-static
@@ -395,7 +395,7 @@ set(SDL2_LIBRARIES SDL2-static)
 elseif(ANDROID)
 set(SDL_SHARED_ENABLED_BY_DEFAULT ON)
 set(SDL_STATIC_ENABLED_BY_DEFAULT OFF)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SDL)
+#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SDL)
 find_library(SDL2 NAMES SDL2 SDL2main)
 list(APPEND KRKRSDL2_LIBS
 	SDL2
@@ -408,7 +408,7 @@ elseif(WIN32)
 set(SDL_SHARED_ENABLED_BY_DEFAULT OFF)
 set(SDL_SHARED OFF)
 set(HAVE_WINDOWS_GAMING_INPUT_H NO)
-add_subdirectory(external/SDL)
+#add_subdirectory(external/SDL)
 find_library(SDL2 NAMES SDL2-static)
 list(APPEND KRKRSDL2_LIBS
 	SDL2-static
@@ -417,7 +417,7 @@ get_target_property(SDL2_INCLUDE_DIRS SDL2-static INCLUDE_DIRECTORIES)
 set(SDL2_LIBRARIES SDL2-static)
 elseif(VITA)
 set(SDL_SHARED_ENABLED_BY_DEFAULT OFF)
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SDL)
+#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/external/SDL)
 find_library(SDL2 NAMES SDL2-static)
 
 list(APPEND KRKRSDL2_LIBS
